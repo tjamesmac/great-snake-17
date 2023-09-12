@@ -5,12 +5,8 @@ import { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
 import data from "./data.json" assert { type: "json" };
 
 const KEY = "dinosaur";
-const TEST = "Aardonyx";
+// const TEST = "Aardonyx";
 const kv = await Deno.openKv();
-await kv.set([KEY, TEST], {
-  name: TEST,
-  description: "An early stage in the evolution of sauropods.",
-});
 
 const router = new Router();
 router
