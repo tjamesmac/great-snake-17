@@ -15,11 +15,6 @@ router
   .get("/api", (context) => {
     context.response.body = data;
   })
-  .get('/api/dinos', async () => {
-    for (const dino of data) {
-      await kv.set([KEY, dino.name.toLowerCase()], dino)
-    }
-  })
   .get("/api/:dinosaur", async (context) => {
     if (context?.params?.dinosaur) {
       const found = await kv.get([
